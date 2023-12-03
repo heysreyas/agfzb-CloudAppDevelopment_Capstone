@@ -1,5 +1,19 @@
 {% extends 'base.html' %}
+
 {% block content %}
+<style>
+    body {
+        color: #FFFFFF;
+    }
+    .heading-txt {
+        color: #FF9900;
+    }
+    .card {
+        background-color: #222222;
+    }
+</style>
+<div class="container">
+    <h1 class="heading-txt" style="font-size: 2em; margin-bottom: 3%; text-align: center; color: #FF9900;">Our Dealerships</h1>
     {% if reviews %}
         {% if user.is_authenticated %}
             <div style="margin: 10px;">
@@ -39,4 +53,5 @@
             </div>
         {% endif %}
     {% endif %}
+</div>
 {% endblock %}

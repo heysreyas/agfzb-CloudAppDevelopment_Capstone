@@ -12,27 +12,32 @@
     <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body, .navbar, .main, footer {
+            background-color: #000000;
+        }
+    </style>
 </head>
 <body class="text-center">
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg" style="background-color: #000000; color: #FF9900;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'djangoapp:index' %}">BestCar Dealership Branch Reviews</a>
+            <a class="navbar-brand" href="{% url 'djangoapp:index' %}" style="color: #FF9900;">BestCar Reviews</a>
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul style="justify-content:left;" class="navbar-nav">
                     <li class="navbar-brand">
-                        <a class="nav-link" href="{% url 'djangoapp:about' %}">About Us</a>
+                        <a class="nav-link" href="{% url 'djangoapp:about' %}" style="color: #FF9900;">About Us</a>
                     </li>
                     <li class="navbar-brand">
-                        <a class="nav-link" href="{% url 'djangoapp:contact' %}">Contact Us</a>
+                        <a class="nav-link" href="{% url 'djangoapp:contact' %}" style="color: #FF9900;">Contact Us</a>
                     </li>
                 </ul>
             </div>
             <div class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
                 <li>
-                    <a class="btn btn-link" href="#">{{ user.first_name }} ({{ user.username }})</a>
-                    <a class="btn btn-link" href="{% url 'djangoapp:logout' %}">Logout</a>
+                    <a class="btn btn-link" href="#" style="color: #FF9900;">{{ user.first_name }} ({{ user.username }})</a>
+                    <a class="btn btn-link" href="{% url 'djangoapp:logout' %}" style="color: #FF9900;">Logout</a>
                 </li>
                 {% else %}
                 <form class="form-inline" action="{% url 'djangoapp:login' %}" method="post">
@@ -41,7 +46,7 @@
                         <input type="text" class="form-control" placeholder="Username" name="username" >
                         <input type="password" class="form-control" placeholder="Password" name="psw" >
                         <button class="btn btn-primary" type="submit">Login</button>
-                        <a class="nav-link" style="font-size:15px" href="{% url 'djangoapp:registration' %}">Sign Up</a>
+                        <a class="nav-link" style="font-size:15px; color: #FF9900;" href="{% url 'djangoapp:registration' %}">Sign Up</a>
                     </div>
                 </form>
                 {% endif %}
@@ -56,5 +61,8 @@
         </div>
     </main>
     <!-- footer -->
+    <footer style="background-color: #000000; color: #FFFFFF;">
+        <!-- Your footer content goes here -->
+    </footer>
 </body>
 </html>
