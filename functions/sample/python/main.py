@@ -9,6 +9,8 @@ import requests
 
 
 def main(param_dict):
+    databaseName = "dealerships"
+
     """Main Function
 
     Args:
