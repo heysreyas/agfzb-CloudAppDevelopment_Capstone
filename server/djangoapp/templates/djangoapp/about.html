@@ -1,39 +1,31 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/bootstrap-table.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.18.2/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{% url 'djangoapp:index' %}">Best Cars Dealership</a>
+            </div>
+            <a class="nav navbar-nav" class="active" href="{% url 'djangoapp:about' %}">About</a>
+            <a class="nav navbar-nav" href="{% url 'djangoapp:contact' %}">Contact Us</a>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <h1>About Us</h1>
+        <p>Best Cars dealership was established in 2010 after a strategic decision was made to transition from the trade side of the business into the retail side. A family business employing three generations of the same family and over 40 staff. We at Best Cars dealership have built our reputation on customer service with over 60% of the business being loyal customers who keep coming back to us. We are a 'Highly rated' Auto Trader dealer and a 'Top rated' Car Gurus dealer. We have over 200 cars on our site that cover a wide range of different types, models and styles, together with a purpose-built workshop, valet bay & 'smart' repair centre. The staff bring with them a wealth of experience from across the motor industry adding up to over 150 years of motor trade knowledge and experience. Most of our staff have been with us long term- an unusual feat in the motor trade so the salesman you purchase your car from is usually here if you come back to see us. Our workshop staff have been with us since the beginning. We found fame in 2012 when our cars were used in the filming of "The Speed and The Curious". Our cars are priced from ₹2,00,000 - ₹1,00,00,000 and we carry a stock of over 200 cars. If we don't have what you want we can usually find it for you. We also specialise in Finance (subject to status) for all kinds of credit ratings and deal with most of the major companies and specialist brokers. Need a warranty? We offer up to 5 years Trading Standards Approved warranty on the majority of our stock with repair centres across India.</p>
+    </div>
+</body>
+</html>
 
-{% block content %}
-<div class="p-4 justify-content-center" style="background-color: #000000; color: #FFFFFF;">
-    <h1 class="skeleton-heading" style="color: #FF9900;">About Us</h1>
-    <p>
-        Welcome to Best Cars, 
-        home to the finest cars in Asia. 
-        We sell domestic and imported cars at competitive prices.
-    </p>
-    </br>
-    <p>
-        Best Cars dealership was established in 2010 after a strategic decision was made to 
-        transition from the trade side of the business into the retail side. A family business 
-        employing three generations of the same family and over 40 staff. 
-        We at Best Cars dealership have built our reputation on customer service with over 60% 
-        of the business being loyal customers who keep coming back to us. 
-        We are a 'Highly rated' Auto Trader dealer and a 'Top rated' Car Gurus dealer.
-        We have over 200 cars on our site that cover a wide range of different types, models and 
-        styles, together with a purpose-built workshop, valet bay & 'smart' repair centre.
-        The staff bring with them a wealth of experience from across the motor industry 
-        adding up to over 150 years of motor trade knowledge and experience.
-        Most of our staff have been with us long term- an unusual feat in the motor trade 
-        so the salesman you purchase your car from is usually here if you come back to see us. 
-        Our workshop staff have been with us since the beginning. 
-        
-        We found fame in 2012 when our cars were used in the filming of "The Speed and The Curious". 
-        Our cars are priced from ₹2,00,000 - ₹1,00,00,000 and we 
-        carry a stock of over 200 cars. If we don't have what you want we 
-        can usually find it for you. We also specialise in Finance (subject to status) 
-        for all kinds of credit ratings and deal with most of the major companies and specialist brokers. 
-        Need a warranty? We offer up to 5 years Trading Standards Approved warranty on the majority of 
-        our stock with repair centres across India. 
-    </p>
-    </br>
-    <p><a style="color: #FF9900; font-weight: bold;" href="{% url 'djangoapp:contact' %}">Connect with us today!</a></p>
-</div>
-  
-{% endblock %}
