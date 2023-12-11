@@ -28,25 +28,66 @@ class CarMake(models.Model):
 # - Any other fields you would like to include in car model
 # - __str__ method to print a car make object
 class CarModel(models.Model):
+    # car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE, null=True)
     id = models.AutoField(primary_key=True)
     name = models.CharField(null=False, max_length=100, default='Car')
-   
-    SEDAN = 'Sedan'
-    SUV = 'SUV'
-    WAGON = 'Wagon'
-    TYPES = [
-        (SEDAN, 'Sedan'),
-        (SUV, 'SUV'),
-        (WAGON, 'Wagon'),
-    ]
 
+    TOYOTA_CAMRY = 'toyota_camry'
+    TOYOTA_COROLLA = 'toyota_corolla'
+    TOYOTA_RAV4 = 'toyota_rav4'
+    TOYOTA_PRIUS = 'toyota_prius'
+    TOYOTA_HIGHLANDER = 'toyota_highlander'
+
+    # Tesla Models
+    TESLA_MODEL_S = 'tesla_model_s'
+    TESLA_MODEL_3 = 'tesla_model_3'
+    TESLA_MODEL_X = 'tesla_model_x'
+    TESLA_MODEL_Y = 'tesla_model_y'
+
+    # Audi Models
+    AUDI_A4 = 'audi_a4'
+    AUDI_A6 = 'audi_a6'
+    AUDI_Q5 = 'audi_q5'
+    AUDI_Q7 = 'audi_q7'
+    AUDI_A3 = 'audi_a3'
+
+    # SEDAN = 'Sedan'
+    # SUV = 'SUV'
+    # WAGON = 'Wagon'
+    TYPES = [
+       (TOYOTA_CAMRY, 'Toyota Camry'),
+        (TOYOTA_COROLLA, 'Toyota Corolla'),
+        (TOYOTA_RAV4, 'Toyota RAV4'),
+        (TOYOTA_PRIUS, 'Toyota Prius'),
+        (TOYOTA_HIGHLANDER, 'Toyota Highlander'),
+        (TESLA_MODEL_S, 'Tesla Model S'),
+        (TESLA_MODEL_3, 'Tesla Model 3'),
+        (TESLA_MODEL_X, 'Tesla Model X'),
+        (TESLA_MODEL_Y, 'Tesla Model Y'),
+        (AUDI_A4, 'Audi A4'),
+        (AUDI_A6, 'Audi A6'),
+        (AUDI_Q5, 'Audi Q5'),
+        (AUDI_Q7, 'Audi Q7'),
+        (AUDI_A3, 'Audi A3'),
+    ]
+    
     type = models.CharField(
         null=False,
         max_length=50,
         choices=TYPES,
-        default=SEDAN
+        default=TESLA_MODEL_3
     )
+
+    # type = models.CharField(
+    #     null=False,
+    #     max_length=50,
+    #     choices=TYPES,
+    #     default=SEDAN
+    # )
     make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
+    # dealer_id = models.IntegerField(default=1)
+    # name = models.CharField(max_length=100)
+
     year = models.DateField(default=now)
 
     def __str__(self):
